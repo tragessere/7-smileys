@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var tray: UIView!
+    var trayOriginalCenter: CGPoint?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 
-
+    @IBAction func onTrayPanGesture(gesture: UIPanGestureRecognizer) {
+        let point = gesture.locationInView(view)
+        let translation = gesture.translationInView(view)
+        
+        if gesture.state == UIGestureRecognizerState.Began {
+            trayOriginalCenter = tray.center
+        } else if gesture.state == UIGestureRecognizerState.Changed {
+            tray.center = CGPoint(x: (trayOriginalCenter?.x)!, y: (trayOriginalCenter?.y)! + translation.y)
+        } else if gesture.state == UIGestureRecognizerState.Ended {
+            
+        }
+    }
 }
 

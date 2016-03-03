@@ -69,24 +69,26 @@ class ViewController: UIViewController {
             
             //Swiping down
             if velocity.y > 0 {
-                UIView.animateWithDuration(0.4, animations: { () -> Void in
-                    self.tray.frame.origin = self.trayClosedPosition
-                })
+              UIView.animateWithDuration(0.5,
+                delay: 0,
+                usingSpringWithDamping: 0.7,
+                initialSpringVelocity: 10,
+                options: [],
+                animations: { () -> Void in
+                  self.tray.frame.origin = self.trayClosedPosition
+                }, completion: nil)
             }
-                //Swiping up
+            //Swiping up
             else {
-                //            UIView.animateWithDuration(0.5,
-                //              delay: 0,
-                //              usingSpringWithDamping: 0.7,
-                //              initialSpringVelocity: velocity.y / 2,
-                //              options: [],
-                //              animations: { () -> Void in
-                //                  self.tray.frame.origin = self.trayOpenPosition
-                //              }, completion: nil)
-                
-                UIView.animateWithDuration(0.4, animations: { () -> Void in
-                    self.tray.frame.origin = self.trayOpenPosition
-                })
+                UIView.animateWithDuration(0.5,
+                  delay: 0,
+                  usingSpringWithDamping: 0.7,
+                  initialSpringVelocity: 10,
+                  options: [],
+                  animations: { () -> Void in
+                      self.tray.frame.origin = self.trayOpenPosition
+                  }, completion: nil)
+
             }
         }
     }

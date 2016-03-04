@@ -14,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="XKv-3a-v0m">
-                                <rect key="frame" x="0.0" y="369" width="320" height="199"/>
+                                <rect key="frame" x="0.0" y="369" width="320" height="405"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happy" id="wSh-cP-G9K">
@@ -80,6 +80,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="arrow" destination="Y2L-hW-FJU" id="Ybl-K4-rXd"/>
                         <outlet property="tray" destination="XKv-3a-v0m" id="4ZG-ht-EdI"/>
                     </connections>
                 </viewController>
